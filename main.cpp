@@ -11,28 +11,24 @@
 int main()
 {
     std::string listTenants[10];
-    std::string tenants;
 
     for (int i = 0; i < 10; i++)
     {
         std::cout << "Enter information about " << i+1 << "nd tenants: ";
-        std::cin >> tenants;
+        std::cin >> listTenants[i];
     }
 
-
+    int tenantsNum;
 
     for (int j = 0; j < 3; j++)
     {
         std::cout << "Enter number of apartment: ";
-        int tenantsNum;
         std::cin >> tenantsNum;
-        if (tenantsNum <= 10)
-            std::cout << listTenants[tenantsNum];
+
+        if (tenantsNum <= 10 && tenantsNum > 0)
+            std::cout << listTenants[tenantsNum - 1] << std::endl;
         else
-            std::cout << "Wrong number";
+            std::cout << "Wrong apartment number";
     }
-
-
     return 0;
 }
-
